@@ -5,57 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Pandals - Durga Puja Guide</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the pandal gallery */
+        .pandal-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .pandal-item {
+            text-align: center;
+            width: 200px;
+        }
+
+        .like-btn {
+            background-color: #ff7043;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .like-btn:focus {
+            outline: none;
+        }
+
+        .like-counter {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+    </style>
 </head>
 <body>
     <header>
         <h1>Durga Puja Guide</h1>
         <nav class="navigation">
-            <!-- <button class="nav-btn" onclick="location.href='index.html'">Home</button>
-            <button class="nav-btn" onclick="location.href='top_pandals.html'">Top Pandals</button>
-            <button class="nav-btn" onclick="location.href='itinerary.html'">Itinerary</button>
-            <button class="nav-btn" onclick="location.href='aboutus.html'">About Us</button> -->
             <a href="index.html">Home</a>
             <a href="top_pandals.html">Top Pandals</a>
             <a href="itinerary.html">Itinenary</a>
-            <a href="quiz_puja.html">Quiz</a>
+            <a href="aboutus.html">About Us</a>
         </nav>
     </header>
+
     <div class="container">
         <h2>Top Pandals to Visit</h2>
         <div class="pandal-gallery">
             <div class="pandal-item">
                 <img src="images/pandal1.jpg" alt="Santosh Mitra Square" height="150" width="200">
                 <a href="santosh.html">Santosh Mitra Square</a>
+                <div>
+                    <button class="like-btn" onclick="likePandal(0)">Like</button>
+                    <span class="like-counter" id="like-counter-0">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal2.jpg" alt="Suruchi Sangha" height="150" width="200">
                 <a href="suruchi.html">Suruchi Sangha</a>
+                <div>
+                    <button class="like-btn" onclick="likePandal(1)">Like</button>
+                    <span class="like-counter" id="like-counter-1">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal3.jpg" alt="Tala Prottoy" height="150" width="200">
                 <p>Tala Prottoy</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(2)">Like</button>
+                    <span class="like-counter" id="like-counter-2">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal4.jpg" alt="Naktala Udayan Sangha" height="150" width="200">
                 <p>Naktala Udayan Sangha</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(3)">Like</button>
+                    <span class="like-counter" id="like-counter-3">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal5.jpg" alt="Kashi Bose Lane" height="150" width="200">
                 <p>Kashi Bose Lane</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(4)">Like</button>
+                    <span class="like-counter" id="like-counter-4">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal6.jpg" alt="Deshapriya Park" height="150" width="200">
                 <p>Deshapriya Park</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(5)">Like</button>
+                    <span class="like-counter" id="like-counter-5">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal7.jpg" alt="Rajdanga Nabauday Sangha" height="150" width="200">
                 <p>Rajdanga Nabauday Sangha</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(6)">Like</button>
+                    <span class="like-counter" id="like-counter-6">0</span>
+                </div>
             </div>
             <div class="pandal-item">
                 <img src="images/pandal8.jpg" alt="Sreebhumi Sporting Club" height="150" width="200">
                 <p>Sreebhumi Sporting Club</p>
+                <div>
+                    <button class="like-btn" onclick="likePandal(7)">Like</button>
+                    <span class="like-counter" id="like-counter-7">0</span>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript function to handle like button click
+        function likePandal(pandalIndex) {
+            // Find the like counter for the specific pandal
+            var counter = document.getElementById('like-counter-' + pandalIndex);
+            // Increment the counter value
+            var likes = parseInt(counter.innerText);
+            counter.innerText = likes + 1;
+        }
+    </script>
+
 </body>
 </html>
